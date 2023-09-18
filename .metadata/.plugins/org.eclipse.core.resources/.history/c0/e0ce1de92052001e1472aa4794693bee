@@ -1,0 +1,24 @@
+package com.amdocs.test;
+
+import finalproject.base;
+import page.SignInPage;
+import page.indexpage;
+
+public class indexpagetest extends base {
+	private indexpage indexPage;
+	
+	
+	 @BeforeMethod
+	    public void setup() throws Throwable {
+		 	loadConfig();
+			launchApp();
+	      
+	        indexPage = new indexpage();
+	    }
+	  
+	 @Test
+	    public void loginTest() throws Throwable {
+	        SignInPage signin= indexPage.clickOnSignInBtn();
+	        HomePage home= signin.login(getUsername(), getPassword());
+
+}

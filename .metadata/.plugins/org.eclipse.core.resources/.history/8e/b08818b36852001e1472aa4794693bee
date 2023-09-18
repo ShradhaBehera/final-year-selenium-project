@@ -1,0 +1,7 @@
+package com.amdocs.pageobjects;
+
+import finalproject.base;
+
+public class SignInPage extends base {
+
+}

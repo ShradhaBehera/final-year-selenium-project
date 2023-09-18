@@ -1,0 +1,7 @@
+package com.amdocs.test;
+
+import finalproject.base;
+
+public class indexpagetest extends base {
+
+}

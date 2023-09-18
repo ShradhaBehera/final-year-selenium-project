@@ -1,0 +1,34 @@
+package com.amdocs.pageobjects;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import finalproject.action;
+import finalproject.base;
+
+public class SignInPage extends base {
+
+	@FindBy(xpath="//*[@id=\"login-modal\"]/div/div/div[2]/div/form/div[2]/div[1]/label/input")
+	WebElement phonenumber;
+	
+	
+	@FindBy(xpath="//*[@id=\"login-modal\"]/div/div/div[2]/div/form/div[2]/div[2]/input")
+	WebElement cont;
+	
+	
+	@FindBy(xpath="//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div[2]/input")
+	WebElement startshopping;
+	
+	public SignInPage() {
+		PageFactory.initElements(SignInPage.driver, (Object)this);
+	}
+	
+public HomePage login(final String number) throws Throwable{
+	action.type(this.phonenumber, number);
+	action.click(SignInPage.driver, this.cont);
+	Thread.sleep(15000);
+	action.click(SignInPage.driver, this.startshopping);
+	return new HomePage();
+}
+}
